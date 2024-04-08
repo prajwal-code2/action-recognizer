@@ -22,7 +22,7 @@ This is a real-time python application that recognizes what the person is doing 
 
 ##     <p align = "left">About CNN_Model💻 </p>
 
-The system utilizes the model made on mobilenet. <br>Model uses TimeDistributed mobilenet as its feature extractor followed by TimeDistributed GlobalAveragePooling and Dropout Layer then by two LSTM layers of 128 and 32 units resp. followed by a dense layer of 8 units and activation softmax to determine the action from the video input.<br> Architecture fo the model is given below:<br>
+The system utilizes the model made on mobilenet. <br>Model uses TimeDistributed mobilenet as its feature extractor followed by TimeDistributed GlobalAveragePooling and Dropout Layer then by two LSTM layers of 128 and 32 units resp. followed by a dense layer of 8 units and activation softmax to determine the action from the video input.<br> Architecture of the model is given below:<br>
 
 
 ![Screenshot (26)](https://github.com/prajwal-code2/action-recognizer/assets/74657725/19dff47f-7572-4097-a93a-bd8c79f43bd6)
