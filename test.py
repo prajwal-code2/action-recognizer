@@ -47,13 +47,17 @@ def inference(video_path):
 
     # Release the VideoCapture object.
     video_reader.release()
+
+    # Converting list in array and expanding dimentions to be used by model
     features = np.asarray(frames_list)
     features = np.expand_dims(features,axis=0)
 
+    # Prediction and converting the output to class name
     predictions = model.predict(features)
     prediction = int(np.argmax(predictions,axis=1))
     text = CLASSES_LIST[prediction]
 
+    # Displaying the video with output
     cap = cv2.VideoCapture(video_path)
 
     while True:
@@ -69,13 +73,15 @@ def inference(video_path):
     cap.release()
     cv2.destroyAllWindows()
 
-
+# Infinite loop for doing inference as many times as user want
 while True:
     path = input("Paste the video path\t")
     path = path.strip('"')  
     if path.split('.')[-1] == 'avi' or path.split('.')[-1] == 'mp4':
         inference(path)
     user_command = input("Press n to exit\t")
+
+    # Break only when user enter n else continue
     if user_command.lower() == 'n':
         break
     else:
