@@ -1,6 +1,6 @@
-#  <p align ="center" height="40px" width="40px">🐶 Dogs Emotion 🐶 </p>
+#  <p align ="center" height="40px" width="40px"> Action Recognizer </p>
 
-#  <p align ="center" height="40px" width="40px">  AI-powered dog emotion detector🤖 </p>
+#  <p align ="center" height="40px" width="40px">  AI-powered Action Recognizer🤖 </p>
 
 
 
@@ -16,36 +16,40 @@
 
 ##     <p align = "left"> Introduction 📚 </p>
 
-Many dog owners have to leave their pets alone at home and have to regularly check how their dog is which is not an easy task. This project is a real-time dog emotion detector which tells whether dog is happy, sad, relaxed or angry. With this project, dog owner can be notified when their dog is not feeling well or is angry because someone breaks into the house and then he/she can take a suitable step. The model used in the project is built from scratch on dog-emotion dataset available on kaggle.  
+This is a real-time python application that recognizes what the person is doing in the video or in front of camera. This application can be installed with cctv cameras to detect if any criminal activity such as burglary, fighting and in such scenarios alarm will get activated. This can be modified for any field where we want to recognize a particular action done by person. The model used in the project is trained on UCF50 dataset where we only used 8 categories for this project. 
 
 <br>
 
 ##     <p align = "left">About CNN_Model💻 </p>
 
-The system utilizes the model made from scratch. <br>Model uses 4 convolutional block(each block contains 2 Conv2D layers followed by a maxpooling layer) where filters used in blocks are 64, 128, 256 and 512 resp. after which a flatten layer is used which make the output of last convolutional block one-dimentional. Then 3 dense layers of 256, 128, 64 units resp. is used followed by a dense layer of 4 units and activation softmax to determine the emotion from the frame.<br> Diagram for illustration is given below:<br>
+The system utilizes the model made on mobilenet. <br>Model uses TimeDistributed mobilenet as its feature extractor followed by TimeDistributed GlobalAveragePooling and Dropout Layer then by two LSTM layers of 128 and 32 units resp. followed by a dense layer of 8 units and activation softmax to determine the action from the video input.<br> Diagram for illustration is given below:<br>
 
-![dog_emotion](https://github.com/prajwal-code2/dogs-emotion/assets/74657725/8fda3d39-9e79-4417-850e-d131af2b52b2)
 
-<br>
-
-![model_architecture](https://github.com/prajwal-code2/dogs-emotion/assets/74657725/5ea92473-d63b-46d4-840e-f1a930a337cc)
+![Screenshot (26)](https://github.com/prajwal-code2/action-recognizer/assets/74657725/19dff47f-7572-4097-a93a-bd8c79f43bd6)
 
 
 <br>
 
 ##     <p align = "left"> Features ⭐ </p>
- -  Real-time emotion detector for dogs.
- -  Can be used for other animals as well after few modification.
+ -  Real-time human action recognizer.
+ -  Can be used for other scenarios where we want to recognize a action after few modification.
 
 <br>
 
 ##     <p align = "left"> Installation and Usage 🛠️ </p>
-1. Clone this repository to your local machine .
-2. Download the kaggle dog-emotion dataset from the link given in 'Dog Emotion' folder in the repository.
-3. Run each cell of emotion_detector.ipynb and save the model in file after training is completed. 
-4. Place the camera so that your dog is visible.
-5. Run the script 'python use_model.py'.
-6. The tool will then use your computer's camera to monitor the dog emotion.
+1. Clone this repository to your local machine.
+2. Change the directory to action-recognizer so that it will run without any errors.
+3. Then install the required packages by running below script
+   ```sh
+   pip install -r requirement.txt
+   ```
+4. Download the UCF50 dataset from the link given in dataset folder in the repository.
+5. Run each cell of detector.ipynb and save the model in file after training is completed.
+6. Then use the model to do inference by running below script
+   ```sh
+   pip install -r test.py
+   ```
+7. Can use check demo video attached below for help.
 
 <br>
 
@@ -55,7 +59,6 @@ The system utilizes the model made from scratch. <br>Model uses 4 convolutional 
 
 
 
-https://github.com/prajwal-code2/dogs-emotion/assets/74657725/990fde01-6dab-4d6a-9fa3-50b12b6d12eb
 
 
 
